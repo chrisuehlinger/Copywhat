@@ -1,49 +1,281 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+  <title>Copywhat?</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Copywhat?</h1>
+        <h3>Licenses, Patents and that weird React thing</h3>
+        <p>
+          <small>
+            <a href="https://chrisuehlinger.com">Chris Uehlinger</a> /
+            <a href="http://twitter.com/uehreka">@uehreka</a>
+          </small>
+        </p>
+      </section>
+      <section>
+        <h2>Who cares about Licenses?</h2>
+        <img class="fragment" src="images/patented-react.jpeg">
+      </section>
+      <section>
+        <h2>Topics</h2>
+        <ol>
+          <li>Copyright and Licenses</li>
+          <li>Patents and Patent Grants</li>
+          <li>The Facebook/React controversy</li>
+        </ol>
+      </section>
+      <section>
+        <h2>Disclaimer</h2>
+        <p>I am not a lawyer, this is not legal advice. This presentation is for entertainment purposes only. If anything you see in this presentation troubles you please retain a lawyer or work with your company's lawyers to find a solution.</p>
+      </section>
+      <section>
+        <h2>Copyright</h2>
+        <p>U.S. Constitution, Article 1, Section 8, Clause 8:</p>
+        <blockquote>[The Congress shall have power] To promote the Progress of Science and useful Arts, by securing for limited Times to Authors and Inventors the exclusive Right to their respective Writings and Discoveries;</blockquote>
+      </section>
+      <section>
+        <h2>What can be Copyrighted?</h2>
+        <ul>
+          <li>Literary works <span style="color:red;" class="fragment">(That's us!)</span></li>
+          <li>Musical works</li>
+          <li>Dramatic works</li>
+          <li>Pantomimes and choreographic works</li>
+          <li>Pictorial, graphic, and sculptural works</li>
+          <li>Audio-visual works</li>
+          <li>Sound recordings</li>
+          <li>Derivative works</li>
+          <li>Compilations</li>
+          <li>Architectural works</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Hold on...</h2>
+        <div style="position:relative" class="stretch">
+            <img class="fragment" style="position:absolute; top:-100px; left: -100px; transform: scale(0.75);" src="images/copying-github.png" />
+            <img class="fragment" style="position:absolute; top:50px; right: 0; transform: scale(0.75);" src="images/copying-blog.png" />
+            <img class="fragment" style="position:absolute; top:0; left: 0; transform: scale(0.75);" src="images/copying-stackoverflow.png" />
+            <img class="fragment" style="position:absolute; top:-50px; right: -200px; transform: scale(0.75);" src="images/copying-npm.png" />
+        </div>
+      </section>
+      <section>
+        <h2>How do I Copyright stuff?</h2>
+        <p class="fragment">You don't have to! Everything you make is automatically copyrighted! <span class="fragment">For the lifetime of the author + 70 years!</span></span></p>
+      </section>
+      <section>
+        <h2>Works made for hire</h2>
+        <p>Broadly speaking (read: overgeneralizing), anything you make for an employer belongs to them, not you. You cannot copy things you did for your job without commiting copyright infringement.</p>
+      </section>
+      <section>
+        <h2>Licenses</h2>
+        <p class="fragment">If you want to let people freely copy your work, you can tell them that this is OK using a <strong>License</strong></p>
+      </section>
+      <section>
+        <h2>How do I license my code?</h2>
+        <div style="position:relative" class="stretch">
+            <img class="fragment" style="position:absolute; top:-100px; left: -100px; transform: scale(0.75);" src="images/license-file.png" />
+            <img class="fragment" style="position:absolute; top:50px; right: 0; transform: scale(0.75);" src="images/license-comment.png" />
+            <img class="fragment" style="position:absolute; top:0; left: 0; transform: scale(0.75);" src="images/license-pkg.png" />
+        </div>
+      </section>
+      <section>
+        <h2>Which License should I use?</h2>
+        <p>Here are 3 commonly used licenses:</p>
+        <ul>
+          <li>MIT (A permissive license)</li>
+          <li>The GNU General Public License or GPL (A FREE AS IN FREEDOM copyleft license)</li>
+          <li>Apache (A permissive license with a patent grant)</li>
+        </ul>
+      </section>
+      <section>
+        <h2>The MIT License</h2>
+        <pre><code style="font-size: 14px" class="fragment nohighlight">Copyright (c) [year] [copyright holders]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</code><code style="font-size: 14px" class="fragment nohighlight">The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</code><code style="font-size: 14px" class="fragment nohighlight">THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre>
+      </section>
+      <section>
+        <h2>GPL</h2>
+        <p class="fragment">You can copy my code, but if you release something that was built with my code, you must release your source code.</p>
+        <p class="fragment">This license is seen as risky by enterprises who want to sell products without open sourcing them.</p>
+      </section>
+      <section>
+        <h2>Apache</h2>
+        <p>It's like MIT, but with a Patent Grant and a CLA (Contributor License Agreement).</p>
+      </section>
+      <section>
+        <h2>What is a patent?</h2>
+        <p>Under United States law, a patent is a right granted to the inventor of a (1) process, machine, article of manufacture, or composition of matter, (2) that is new, useful, and non-obvious. A patent is the right to exclude others from using a new technology.</p>
+      </section>
+      <section>
+        <h2>Let's patent Chrissort</h2>
+        <img src="images/quicksort-wikipedia.png" />
+      </section>
+      <section>
+        <h2>Let's patent Chrissort</h2>
+        <ul>
+          <li>I need to write a detailed explanation of my algorithm</li>
+          <li>I need to show that my algorithm is new, useful and non-obvious</li>
+          <li>In return for sharing my knowledge with the public, I get to control who uses my algorithm for 20 years</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Let's give Chrissort to Swift</h2>
+        <ul>
+          <li>The Swift Standard Library uses the Apache License</li>
+          <li class="fragment">If I want to contribute code to them, I need to sign a CLA (Contributor License Agreement)</li>
+          <li class="fragment">Basically, I need to say "It's OK for Swift and its users to use my patented stuff."</li>
+        </ul>
+      </section>
+      <section>
+        <h2>What Apache says about Patents</h2>
+        <pre><code style="font-size: 14px" class="nohighlight">3. Grant of Patent License.
+
+Subject to the terms and conditions of
+this License, each Contributor hereby grants to You a perpetual,
+worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+(except as stated in this section) patent license to make, have made,
+use, offer to sell, sell, import, and otherwise transfer the Work,
+where such license applies only to those patent claims licensable
+by such Contributor that are necessarily infringed by their
+Contribution(s) alone or by combination of their Contribution(s)
+with the Work to which such Contribution(s) was submitted.</code><code style="font-size: 14px" class="fragment nohighlight">If You institute patent litigation against any entity (including a
+cross-claim or counterclaim in a lawsuit) alleging that the Work
+or a Contribution incorporated within the Work constitutes direct
+or contributory patent infringement, then any patent licenses
+granted to You under this License for that Work shall terminate
+as of the date such litigation is filed.</code></pre>
+      </section>
+      <section>
+        <h2>Come on already and tell us about React</h2>
+        <ul>
+          <li class="fragment">React was first released in 2013 under the Apache license.</li>
+          <li class="fragment">In October 2014, they switched to the 3-clause BSD license (for copyrights) and added a separate PATENTS file with a custom written patent grant (which they tweaked a bit in April 2015).</li>
+          <li class="fragment">This combination of licenses is often called "Facebook BSD+Patents"</li>
+        </ul>
+
+      </section>
+      <section>
+        <h2>What did it say?</h2>
+        <pre><code style="font-size: 14px" class="nohighlight">The license granted hereunder will terminate, automatically and without notice,
+if you (or any of your subsidiaries, corporate affiliates or agents) initiate
+directly or indirectly, or take a direct financial interest in, any Patent
+Assertion: (i) against Facebook or any of its subsidiaries or corporate
+affiliates, (ii) against any party if such Patent Assertion arises in whole or
+in part from any software, technology, product or service of Facebook or any of
+its subsidiaries or corporate affiliates, or (iii) against any party relating
+to the Software. Notwithstanding the foregoing, if Facebook or any of its
+subsidiaries or corporate affiliates files a lawsuit alleging patent
+infringement against you in the first instance, and you respond by filing a
+patent infringement counterclaim in that lawsuit against that party that is
+unrelated to the Software, the license granted hereunder will not terminate
+under section (i) of this paragraph due to such counterclaim.</code></pre>
+      </section>
+      <section>
+        <h2>The Apache Foundation didn't like this</h2>
+        <img src="images/apache-github-issue.png" />
+      </section>
+      <section>
+        <h2>Facebook said tough cookies</h2>
+        <img src="images/facebook-tough-cookies.png" />
+      </section>
+      <section>
+        <h2>Wordpress said tough cookies</h2>
+        <img src="images/wordpress-blog.png" />
+      </section>
+      <section>
+        <h2>Facebook said "Enough!"</h2>
+        <img src="images/facebook-relicensing.png" />
+      </section>
+      <section>
+        <h2>Everyone celebrated!</h2>
+        <img src="images/amasad-1.png" />
+      </section>
+      <section>
+        <h2>...or not?</h2>
+        <img src="images/amasad-2.png" />
+      </section>
+      <section>
+        <h2>So... are we good?</h2>
+        <p class="fragment">Maybe.</p>
+        <ul>
+          <li class="fragment">If there's no patented stuff in React, then we don't need a patent grant to use it (although it raises the question of why Facebook had one before)</li>
+          <li class="fragment">If there *is* patented stuff in React, then anyone who uses it is commiting patent infringment</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Wait, I thought this had a happy ending?</h2>
+        <ul>
+            <li class="fragment">It's possible that the MIT License can implicitly grant patent rights, but this seems shaky and unproven.</li>
+            <li class="fragment">Many people who have looked at Facebook's portfolio say there aren't patents in React, but it's hard to be 100% sure.</li>
+            <li class="fragment">Bottom line: Using React is *probably* OK, but I am not a lawyer and this is not legal advice.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Thanks!</h2>
+        <p>You can follow me on twitter <a href="http://twitter.com/uehreka">@uehreka</a></p>
+        <p>Useful resources:</p>
+        <ul>
+          <li><a href="https://choosealicense.com/">GitHub's choosealicense.com</a></li>
+          <li>Lynda.com's "Programming Foundations: Open-Source Licensing" course</li>
+          <li>Dennis Walsh's <a href="https://medium.com/@dwalsh.sdlr/react-facebook-and-the-revokable-patent-license-why-its-a-paper-25c40c50b562">blog</a> <a href="https://medium.com/@dwalsh.sdlr/reacts-new-mit-license-the-circus-enters-it-s-third-ring-2f1bf989a67f">posts</a> about the React Licensing Circus</li>
+          <li><a href="https://www.youtube.com/watch?v=RQOJgEA5e1k&list=PL8dPuuaLjXtMwV2btpcij8S3YohW9gUGN">CrashCourse Intellectual Property</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      history: true,
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+
 </html>
